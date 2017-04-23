@@ -133,11 +133,11 @@ int defStyleResource - 如果defStyleAttr未使用，则应用于View的默认�
 <p>An attribute in the current theme that contains a reference to a style resource that supplies defaults values for the TypedArray.<br>wow，真绕口。还是讲人话吧，这是一种能够为某种类型的所有视图定义基本样式的方式。例如，如果要一次修改所有应用程序的TextView，您可以在主题中设置textViewStyle。如果不这样做，那么您必须手动为每个TextView设置样式。</p>
 <p>这里以TextView为例，介绍实际工作原理。</p>
 <p>首先，它是一个属性（在这种情况下为R.attr.textViewStyle）。这里是Android平台定义textViewStyle的地方：</p>
-<resources><br><br>   <declare-styleable name="Theme"><br><br>   <!-- ...snip... --><br><br>   <!-- Default TextView style.--><br><br>   <attr name="textViewStyle" format="reference"><br><br>   <!-- ...etc... --><br><br>  </attr></declare-styleable><br><br></resources>
+<resources><br><br>   <declare-styleable name="Theme"><br><br>     <attr name="textViewStyle" format="reference"><br><br>   </attr></declare-styleable><br><br></resources>
 
 <p>再次，我们使用declare-styleable，但这次是定义可以存在于主题中的属性。在这里，我们说textViewStyle是一个引用 - 也就是说，它的值只是一个对资源的引用。在这种情况下，它应该是一种风格的引用。（怎么感觉拗口，是时候多看看书学习下了……）</p>
 <p>接下来我们必须在当前主题中设置textViewStyle。默认的Android主题如下所示：</p>
-<resources><br><br>   <declare-styleable name="Theme"><br><br>   <attr name="textViewStyle" format="reference"><br><br>   </attr></declare-styleable><br><br></resources>
+<resources><br><br>   <declare-styleable name="Theme"><br><br>    <attr name="textViewStyle" format="reference"><br><br>   </attr></declare-styleable><br><br></resources>
 
 <p>然后，您的Application或activity必须为主题设置，通常通过清单：</p>
 <activity android:name=".MyActivity" android:theme="@style/Theme">
@@ -178,7 +178,7 @@ int defStyleResource - 如果defStyleAttr未使用，则应用于View的默认�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/04/22/你真的了解android-view-构造函数么/" data-id="cj1udq42q0001v87yi8xy0f31" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/04/22/你真的了解android-view-构造函数么/" data-id="cj1uduoz10001zk7yl9rte37v" class="article-share-link">Share</a>
       
       
     </footer>
@@ -223,7 +223,7 @@ int defStyleResource - 如果defStyleAttr未使用，则应用于View的默认�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/04/22/hello-world/" data-id="cj1udq42a0000v87y7n7j4pou" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/04/22/hello-world/" data-id="cj1uduoyv0000zk7y6thltz6w" class="article-share-link">Share</a>
       
       
     </footer>
